@@ -53,7 +53,7 @@ Twitter.on('data', function (obj) {
     console.log('data BUFFER', obj);
     console.log('string conversion of BUFFER',ab2str(obj))
     var tweet_string = ab2str(obj);
-    var prettyTweet = JSON.stringify(tweet_string,null,2)
+    var prettyTweet = JSON.stringify(JSON.parse(tweet_string),null,2)
     fs.appendFileSync('tweets_pretty.json', prettyTweet);
 });
 
